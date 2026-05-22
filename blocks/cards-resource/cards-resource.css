@@ -1,0 +1,121 @@
+/* Block: cards-resource
+ * Quick-link resource cards with icon + text label.
+ * Source: https://hostplus.com.au/advisers (.cmp-resources-container-content-hero)
+ * Layout: 6 white cards in a row (desktop), 3 columns (tablet), 2 columns (mobile)
+ * Each card: icon centered above bold text, white background with subtle shadow
+ */
+
+/* Reduce section padding - this block sits close to the hero above */
+.cards-resource-container {
+  padding-top: 0;
+}
+
+.cards-resource > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cards-resource > ul > li {
+  background-color: #fff;
+  box-shadow:
+    rgb(128 147 170 / 8%) 3px 5px 7px 0,
+    rgb(179 191 204 / 25%) 2px 6px 16px 0;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 12px;
+  text-align: center;
+}
+
+.cards-resource .cards-resource-card-image {
+  line-height: 0;
+  margin-bottom: 12px;
+}
+
+.cards-resource .cards-resource-card-image picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-resource .cards-resource-card-image img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.cards-resource .cards-resource-card-body {
+  margin: 0;
+}
+
+.cards-resource .cards-resource-card-body strong {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--heading-color);
+}
+
+.cards-resource .cards-resource-card-body a:any-link {
+  color: var(--heading-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cards-resource .cards-resource-card-body a:hover {
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+/* Reset EDS button styling - links in this block should be plain text, not buttons */
+main .cards-resource .cards-resource-card-body a.button:any-link {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: var(--heading-color);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  white-space: normal;
+  display: inline;
+}
+
+main .cards-resource .cards-resource-card-body a.button:hover {
+  background-color: transparent;
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+main .cards-resource .cards-resource-card-body p.button-wrapper {
+  margin: 0;
+}
+
+@media (width >= 600px) {
+  .cards-resource > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .cards-resource > ul > li {
+    min-height: 180px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-resource > ul {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+  }
+
+  .cards-resource > ul > li {
+    min-height: 200px;
+  }
+}

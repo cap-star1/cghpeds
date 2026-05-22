@@ -1,0 +1,94 @@
+/* Block: cards-article */
+.cards-article > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.cards-article > ul > li {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  grid-template-rows: 1fr auto;
+  background-color: #fff;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.cards-article .cards-article-card-image {
+  grid-row: 1 / -1;
+  line-height: 0;
+}
+
+.cards-article .cards-article-card-image picture {
+  display: block;
+  height: 100%;
+}
+
+.cards-article > ul > li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cards-article .cards-article-card-body:nth-child(2) {
+  padding: 24px 24px 0;
+}
+
+.cards-article .cards-article-card-body:nth-child(3) {
+  align-self: end;
+  padding: 0 24px 32px;
+}
+
+.cards-article .cards-article-card-body h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.cards-article .cards-article-card-body p {
+  margin: 0;
+}
+
+.cards-article .cards-article-card-body a:any-link {
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cards-article .cards-article-card-body a:any-link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--link-color);
+  margin-top: 4px;
+}
+
+.cards-article .cards-article-card-body a:any-link:hover {
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+.cards-article .cards-article-card-body a:any-link:hover::after {
+  background-color: var(--link-hover-color);
+}
+
+@media (width >= 600px) {
+  .cards-article > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-article > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}

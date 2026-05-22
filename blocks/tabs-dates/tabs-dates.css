@@ -1,0 +1,104 @@
+/* Block: tabs-dates -- CSS based on source computed styles */
+
+.tabs-dates .tabs-dates-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.tabs-dates .tabs-dates-list button {
+  flex: 0 0 auto;
+  margin: 0 4px -1px 0;
+  border: 1px solid rgb(224 216 213);
+  border-bottom: 1px solid rgb(203 195 191);
+  border-radius: 2px 2px 0 0;
+  padding: 16px 32px;
+  background-color: rgb(224 216 213);
+  color: var(--dark-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tabs-dates .tabs-dates-list button[aria-selected='true'] {
+  background-color: var(--background-color);
+  border-top: 1px solid rgb(203 195 191);
+  border-right: 1px solid rgb(203 195 191);
+  border-bottom: 0;
+  border-left: 1px solid rgb(203 195 191);
+  cursor: default;
+}
+
+.tabs-dates p {
+  color: var(--background-color);
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+  margin: 12px 0 0;
+}
+
+.tabs-dates .tabs-dates-list button p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.tabs-dates .tabs-dates-panel {
+  margin-top: 0;
+  border-top: 1px solid rgb(203 195 191);
+  padding: 24px 0 56px;
+}
+
+.tabs-dates .tabs-dates-panel[aria-hidden='true'] {
+  display: none;
+}
+
+/* Panel content area - mid-blue background with white text */
+.tabs-dates .tabs-dates-panel > div {
+  background-color: var(--mid-blue);
+  padding: 32px;
+  border-radius: 2px;
+}
+
+.tabs-dates .tabs-dates-panel h3 {
+  color: var(--background-color);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0;
+}
+
+.tabs-dates .tabs-dates-panel p:first-of-type {
+  margin-top: 12px;
+}
+
+/* Mobile adjustments */
+@media (width < 600px) {
+  .tabs-dates .tabs-dates-list button {
+    padding: 12px 16px;
+    font-size: var(--body-font-size-xs);
+  }
+
+  .tabs-dates .tabs-dates-panel > div {
+    padding: 24px 16px;
+  }
+
+  .tabs-dates .tabs-dates-panel h3 {
+    font-size: var(--heading-font-size-m);
+    line-height: 1.2;
+  }
+}
+
+@media (width >= 600px) and (width < 900px) {
+  .tabs-dates .tabs-dates-list button {
+    padding: 14px 24px;
+    font-size: var(--body-font-size-s);
+  }
+}

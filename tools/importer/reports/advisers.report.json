@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://hostplus.com.au/advisers",
+  "path": "advisers",
+  "timestamp": "2026-05-21T11:57:44.232Z",
+  "title": "Advisers",
+  "template": "advisers-page",
+  "blocks": [
+    "hero-adviser",
+    "cards-resource",
+    "tabs-dates",
+    "columns-promo",
+    "columns-promo",
+    "columns-feature",
+    "cards-product",
+    "columns-cta",
+    "cards-article"
+  ]
+}

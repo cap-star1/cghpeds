@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-article",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-21T11:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://hostplus.com.au/advisers",
+    "originPage": "Advisers landing page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "article-cards",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + CTA link",
+    "buttonCount": 3,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "article or page listing with images",
+      "explore further sections",
+      "related content cards with photos"
+    ],
+    "notSuitableFor": [
+      "icon-based navigation cards",
+      "cards without images",
+      "compact link-style cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/advisers"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-21T11:31:00.000Z"
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "projectType": "doc"
+  },
+  "templates": [
+    {
+      "name": "advisers-page",
+      "urls": [
+        "https://hostplus.com.au/advisers"
+      ],
+      "description": "Advisers landing page for financial advisers working with Hostplus members",
+      "blocks": [
+        {
+          "name": "hero-adviser",
+          "instances": [
+            ".hero-block-V2 .cmp-hero-block-V2__container"
+          ]
+        },
+        {
+          "name": "cards-resource",
+          "instances": [
+            ".cmp-resources-container-content-hero"
+          ]
+        },
+        {
+          "name": "tabs-dates",
+          "instances": [
+            ".tabs.panelcontainer .cmp-tabs"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            ".promote-campaign.cmp-promote-campaign-banner-mid-blue.cmp-promote-campaign-banner-image.--mb-4xl",
+            ".promote-campaign.cmp-promote-campaign-banner-dark-blue.cmp-promote-campaign-banner-image:has(#promote-campaign-8687610466)"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            ".content-media-block .cmp-content-media-block"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            ".crosslinks .cmp-cross-link__list"
+          ]
+        },
+        {
+          "name": "columns-cta",
+          "instances": [
+            ".cta .cmp-cta"
+          ]
+        },
+        {
+          "name": "cards-article",
+          "instances": [
+            ".page-list .cmp-page-list"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Section",
+          "selector": ".hero-block-V2",
+          "style": null,
+          "blocks": [
+            "hero-adviser",
+            "cards-resource"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "EOFY Cut-off Dates",
+          "selector": [
+            ".container-block.container.responsivegrid:has(#heading-dcc7b41184)",
+            ".tabs.panelcontainer"
+          ],
+          "style": null,
+          "blocks": [
+            "tabs-dates"
+          ],
+          "defaultContent": [
+            "#heading-dcc7b41184 .cmp-title__text"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Retirement Bonus Promo",
+          "selector": ".promote-campaign.cmp-promote-campaign-banner-mid-blue.cmp-promote-campaign-banner-image.--mb-4xl",
+          "style": null,
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Why Choose Hostplus",
+          "selector": ".content-media-block.--mb-4xl",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Discover Products",
+          "selector": [
+            ".container-block.container.responsivegrid:has(#products)",
+            ".crosslinks.--mb-2xl"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": [
+            "#discover .cmp-title__text",
+            "#text-ce02fa9a7c"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "360Health Promo",
+          "selector": ".promote-campaign.cmp-promote-campaign-banner-dark-blue.cmp-promote-campaign-banner-image:has(#promote-campaign-8687610466)",
+          "style": null,
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Lonsec CTA",
+          "selector": ".cta.--mb-4xl.medium",
+          "style": "dark",
+          "blocks": [
+            "columns-cta"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Explore Further",
+          "selector": ".container-block.container.responsivegrid.--mb-4xl:has(#container-block-851ebfbdd9)",
+          "style": "highlight",
+          "blocks": [
+            "cards-article"
+          ],
+          "defaultContent": [
+            "#heading-aa63c653a1 .cmp-title__text"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Disclaimers",
+          "selector": ".container-block.container.responsivegrid.--mb-4xl:has(#container-block-09d717a639)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "#disclaimer-c6b1f5d06e"
+          ]
+        }
+      ]
+    }
+  ]
+}

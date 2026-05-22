@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-cta",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-21T11:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://hostplus.com.au/advisers",
+    "originPage": "Advisers landing page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "call-to-action",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + description + CTA button + badge image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "call-to-action sections with dark backgrounds",
+      "award/rating highlight sections",
+      "bottom-of-page CTA blocks with image"
+    ],
+    "notSuitableFor": [
+      "light background content sections",
+      "promotional banners with colored backgrounds",
+      "simple informational side-by-side layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/advisers"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-21T11:31:00.000Z"
+  }
+}

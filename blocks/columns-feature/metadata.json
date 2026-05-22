@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-21T11:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://hostplus.com.au/advisers",
+    "originPage": "Advisers landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-highlight",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraphs + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature highlight with image and text",
+      "why choose us sections",
+      "content blocks with supporting imagery"
+    ],
+    "notSuitableFor": [
+      "promotional banners with colored backgrounds",
+      "CTA sections with dark backgrounds",
+      "simple side-by-side without hierarchy"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/advisers"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-21T11:31:00.000Z"
+  }
+}
