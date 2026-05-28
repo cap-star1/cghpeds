@@ -93,22 +93,27 @@ header nav .nav-hamburger-icon::after {
 /* Brand: logo in white card */
 header .nav-brand {
   flex-shrink: 0;
-  padding: 12px 24px;
-  align-self: stretch;
+  padding: 0;
+  align-self: flex-start;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  margin-left: 32px;
+  margin-right: 32px;
 }
 
 header nav .nav-brand .default-content-wrapper {
   background-color: #fff;
-  padding: 12px 14px;
-  border-radius: 0 0 4px 4px;
+  padding: 0 14px 14px;
+  width: 97px;
+  display: flex;
+  justify-content: center;
 }
 
 header nav .nav-brand img {
-  width: 52px;
+  width: 69px;
   height: auto;
   display: block;
+  margin-top: 48px;
 }
 
 /* Sections: hidden on mobile */
@@ -201,7 +206,7 @@ header nav .nav-tools .button {
 @media (width >= 900px) {
   header nav {
     display: grid;
-    grid-template-columns: 100px 1fr auto;
+    grid-template-columns: 140px 1fr auto;
     grid-template-rows: 50% 50%;
     align-items: center;
     padding: 0 32px;
@@ -302,7 +307,7 @@ header nav .nav-tools .button {
 
   header nav .nav-sections .default-content-wrapper > ul:last-child > li a {
     color: #fff;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
   }
 
