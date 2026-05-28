@@ -1,6 +1,6 @@
-/* Header: always a compact dark bar overlaying the hero */
+/* Header: two-tier dark nav matching source */
 header .nav-wrapper {
-  background-color: transparent;
+  background-color: var(--dark-color);
   width: 100%;
   z-index: 100;
   position: fixed;
@@ -11,8 +11,10 @@ header .nav-wrapper {
 header nav {
   box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  height: var(--nav-height);
+  max-width: 1600px;
+  margin: auto;
   padding: 0;
   font-family: var(--body-font-family);
   color: #fff;
@@ -35,108 +37,15 @@ header nav a:any-link:hover {
   text-decoration: none;
 }
 
-/* Brand: white card badge on left */
-header .nav-brand {
-  flex-shrink: 0;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-header nav .nav-brand .default-content-wrapper {
-  background-color: #fff;
-  padding: 16px;
-  border-radius: 0 0 4px 4px;
-}
-
-header nav .nav-brand img {
-  width: 56px;
-  height: auto;
-  display: block;
-}
-
-/* Tools: Login + Register buttons centered */
-header nav .nav-tools {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  align-items: center;
-  padding: 0 24px;
-}
-
-header nav .nav-tools .default-content-wrapper {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-header nav .nav-tools p {
-  margin: 0;
-}
-
-header nav .nav-tools p:first-child a:any-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 32px;
-  border-radius: 2px;
-  font-size: 16px;
-  font-weight: 500;
-  white-space: nowrap;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid var(--link-color);
-  text-decoration: none;
-  transition: background-color 0.2s;
-}
-
-header nav .nav-tools p:first-child a:any-link:hover {
-  background-color: var(--link-color);
-}
-
-/* stylelint-disable no-descending-specificity */
-header nav .nav-tools p:last-child a:any-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 12px 32px;
-  border-radius: 2px;
-  font-size: 16px;
-  font-weight: 500;
-  white-space: nowrap;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid var(--yellow);
-  text-decoration: none;
-  transition: background-color 0.2s;
-}
-
-header nav .nav-tools p:last-child a:any-link:hover {
-  background-color: var(--yellow);
-  color: var(--dark-color);
-}
-/* stylelint-enable no-descending-specificity */
-
-header nav .nav-tools .button-container {
-  margin: 0;
-}
-
-header nav .nav-tools .button {
-  all: unset;
-}
-
-/* Hamburger: dark square on right */
+/* Hamburger - mobile only */
 header nav .nav-hamburger {
-  flex-shrink: 0;
-  width: 80px;
-  height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--dark-color);
-  border-left: 1px solid rgb(255 255 255 / 10%);
-  cursor: pointer;
+  width: 56px;
+  height: 56px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 header nav .nav-hamburger button {
@@ -156,7 +65,7 @@ header nav .nav-hamburger button {
 header nav .nav-hamburger-icon {
   display: block;
   position: relative;
-  width: 24px;
+  width: 22px;
   height: 2px;
   border-radius: 2px;
   background: #fff;
@@ -167,44 +76,64 @@ header nav .nav-hamburger-icon::after {
   content: '';
   display: block;
   position: absolute;
-  width: 24px;
+  width: 22px;
   height: 2px;
   border-radius: 2px;
   background: #fff;
 }
 
 header nav .nav-hamburger-icon::before {
-  top: -7px;
+  top: -6px;
 }
 
 header nav .nav-hamburger-icon::after {
-  top: 7px;
+  top: 6px;
 }
 
-/* Sections: ALWAYS hidden in the compact bar */
+/* Brand: logo in white card */
+header .nav-brand {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+header nav .nav-brand .default-content-wrapper {
+  background-color: #fff;
+  padding: 12px 14px;
+  border-radius: 0 0 4px 4px;
+}
+
+header nav .nav-brand img {
+  width: 52px;
+  height: auto;
+  display: block;
+}
+
+/* Sections: hidden on mobile */
 header nav .nav-sections {
   display: none;
   visibility: hidden;
-  position: absolute;
-  top: var(--nav-height);
-  left: 0;
-  right: 0;
+}
+
+header nav[aria-expanded='true'] .nav-sections {
+  display: block;
+  visibility: visible;
+  flex-basis: 100%;
+  padding: 16px 24px;
   background-color: var(--dark-color);
-  padding: 24px;
-  max-height: calc(100dvh - var(--nav-height));
-  overflow-y: auto;
 }
 
 header nav .nav-sections ul {
   list-style: none;
-  padding-left: 0;
-  font-size: 16px;
+  padding: 0;
   margin: 0;
+  font-size: 14px;
 }
 
 header nav .nav-sections ul > li {
-  font-weight: 500;
-  padding: 12px 0;
+  padding: 10px 0;
   border-bottom: 1px solid rgb(255 255 255 / 10%);
 }
 
@@ -215,60 +144,223 @@ header nav .nav-sections ul > li > ul {
 
 header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
-  padding: 8px 0;
+  padding: 6px 0;
   border-bottom: none;
 }
 
-header nav .nav-sections .nav-drop {
-  cursor: pointer;
+/* Tools: hidden on mobile, shown in expanded */
+header nav .nav-tools {
+  display: none;
 }
 
-/* Menu open state: controlled by JS adding a class or aria attribute.
-   The standard header.js toggles aria-expanded on the nav element.
-   On desktop: resting = "true", opened = "false" (inverted!)
-   On mobile: resting = "false", opened = "true"
-   We handle BOTH cases by showing sections when the hamburger is clicked. */
-
-/* Mobile open: aria-expanded="true" means menu is open */
-@media (width < 900px) {
-  header nav[aria-expanded='true'] .nav-sections {
-    display: block;
-    visibility: visible;
-  }
-
-  header nav[aria-expanded='true'] .nav-hamburger-icon {
-    background: transparent;
-  }
-
-  header nav[aria-expanded='true'] .nav-hamburger-icon::before {
-    top: 0;
-    transform: rotate(45deg);
-  }
-
-  header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-    top: 0;
-    transform: rotate(-45deg);
-  }
+header nav[aria-expanded='true'] .nav-tools {
+  display: flex;
+  flex-basis: 100%;
+  gap: 12px;
+  padding: 16px 24px;
+  flex-wrap: wrap;
 }
 
-/* Desktop open: aria-expanded="false" means menu is open (inverted logic) */
+header nav .nav-tools .default-content-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header nav .nav-tools p {
+  margin: 0;
+}
+
+header nav .nav-tools a:any-link {
+  padding: 10px 24px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 2px solid var(--link-color);
+  transition: background-color 0.2s;
+}
+
+header nav .nav-tools a:any-link:hover {
+  background-color: var(--link-color);
+  color: #fff;
+}
+
+header nav .nav-tools .button-container {
+  margin: 0;
+}
+
+header nav .nav-tools .button {
+  all: unset;
+}
+
+/* ===== Desktop: two-tier layout ===== */
 @media (width >= 900px) {
+  header nav {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    padding: 0 32px;
+    height: auto;
+  }
+
+  /* Hide hamburger on desktop */
+  header nav .nav-hamburger {
+    display: none;
+  }
+
+  /* Brand spans both rows */
+  header .nav-brand {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    padding: 12px 32px 12px 0;
+  }
+
+  /* Sections always visible on desktop regardless of aria-expanded */
+  header nav .nav-sections,
+  header nav[aria-expanded='true'] .nav-sections,
   header nav[aria-expanded='false'] .nav-sections {
     display: block;
     visibility: visible;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    flex-basis: auto;
+    padding: 0;
+    background-color: transparent;
   }
 
-  header nav[aria-expanded='false'] .nav-hamburger-icon {
-    background: transparent;
+  header nav .nav-sections .default-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-    top: 0;
-    transform: rotate(45deg);
+  /* Primary nav: top row */
+  header nav .nav-sections .default-content-wrapper > ul:first-child {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgb(255 255 255 / 15%);
   }
 
-  header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-    top: 0;
-    transform: rotate(-45deg);
+  header nav .nav-sections .default-content-wrapper > ul:first-child > li {
+    padding: 4px 16px;
+    border-bottom: none;
+    font-weight: 400;
+    color: rgb(200 200 200);
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul:first-child > li a {
+    color: rgb(200 200 200);
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul:first-child > li a:hover {
+    color: #fff;
+  }
+
+  /* Active page indicator (Advisers) */
+  header nav .nav-sections .default-content-wrapper > ul:first-child > li:nth-child(3) a {
+    color: #fff;
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+  }
+
+  /* Secondary nav: bottom row */
+  header nav .nav-sections .default-content-wrapper > ul:last-child {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    padding: 12px 0;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul:last-child > li {
+    padding: 4px 16px;
+    border-bottom: none;
+    font-weight: 500;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul:last-child > li a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul:last-child > li a:hover {
+    color: var(--yellow);
+  }
+
+  /* Tools always visible on desktop regardless of aria-expanded */
+  header nav .nav-tools,
+  header nav[aria-expanded='true'] .nav-tools,
+  header nav[aria-expanded='false'] .nav-tools {
+    display: grid;
+    grid-column: 3;
+    grid-row: 1 / 3;
+    gap: 0;
+    align-content: center;
+    flex-basis: auto;
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+
+  header nav .nav-tools .default-content-wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 8px 12px;
+    align-items: center;
+  }
+
+  /* Contact us - top right */
+  header nav .nav-tools .default-content-wrapper p:nth-child(1) {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: right;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgb(255 255 255 / 15%);
+  }
+
+  header nav .nav-tools .default-content-wrapper p:nth-child(1) a {
+    border: none;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(200 200 200);
+  }
+
+  header nav .nav-tools .default-content-wrapper p:nth-child(1) a:hover {
+    color: #fff;
+    background-color: transparent;
+  }
+
+  /* Login button */
+  header nav .nav-tools .default-content-wrapper p:nth-child(2) {
+    grid-row: 2;
+  }
+
+  header nav .nav-tools .default-content-wrapper p:nth-child(2) a {
+    border-color: var(--link-color);
+  }
+
+  /* Register button */
+  header nav .nav-tools .default-content-wrapper p:nth-child(3) {
+    grid-row: 2;
+  }
+
+  header nav .nav-tools .default-content-wrapper p:nth-child(3) a {
+    border-color: var(--yellow);
+  }
+
+  header nav .nav-tools .default-content-wrapper p:nth-child(3) a:hover {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--dark-color);
   }
 }
