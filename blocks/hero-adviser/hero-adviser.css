@@ -12,7 +12,8 @@
 
 .hero-adviser {
   position: relative;
-  min-height: 400px;
+  min-height: calc(400px + var(--nav-height));
+  padding-top: var(--nav-height);
   display: flex;
   flex-direction: column;
 }
