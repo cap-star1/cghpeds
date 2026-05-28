@@ -1,29 +1,21 @@
-/* header and nav layout */
+/* Header: always a compact dark bar overlaying the hero */
 header .nav-wrapper {
   background-color: transparent;
   width: 100%;
   z-index: 100;
   position: fixed;
+  top: 0;
+  left: 0;
 }
 
 header nav {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: auto;
-  max-width: 100%;
   height: var(--nav-height);
   padding: 0;
   font-family: var(--body-font-family);
   color: #fff;
-}
-
-header nav[aria-expanded='true'] {
-  flex-wrap: wrap;
-  overflow-y: auto;
-  min-height: 100dvh;
-  background-color: var(--dark-color);
 }
 
 header nav p {
@@ -43,9 +35,99 @@ header nav a:any-link:hover {
   text-decoration: none;
 }
 
-/* hamburger */
+/* Brand: white card badge on left */
+header .nav-brand {
+  flex-shrink: 0;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+header nav .nav-brand .default-content-wrapper {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 0 0 4px 4px;
+}
+
+header nav .nav-brand img {
+  width: 56px;
+  height: auto;
+  display: block;
+}
+
+/* Tools: Login + Register buttons centered */
+header nav .nav-tools {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+  padding: 0 24px;
+}
+
+header nav .nav-tools .default-content-wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+header nav .nav-tools p {
+  margin: 0;
+}
+
+header nav .nav-tools p:first-child a:any-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 32px;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--link-color);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+header nav .nav-tools p:first-child a:any-link:hover {
+  background-color: var(--link-color);
+}
+
+/* stylelint-disable no-descending-specificity */
+header nav .nav-tools p:last-child a:any-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 32px;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--yellow);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+header nav .nav-tools p:last-child a:any-link:hover {
+  background-color: var(--yellow);
+  color: var(--dark-color);
+}
+/* stylelint-enable no-descending-specificity */
+
+header nav .nav-tools .button-container {
+  margin: 0;
+}
+
+header nav .nav-tools .button {
+  all: unset;
+}
+
+/* Hamburger: dark square on right */
 header nav .nav-hamburger {
-  order: 3;
+  flex-shrink: 0;
   width: 80px;
   height: var(--nav-height);
   display: flex;
@@ -53,6 +135,8 @@ header nav .nav-hamburger {
   justify-content: center;
   background-color: var(--dark-color);
   border-left: 1px solid rgb(255 255 255 / 10%);
+  cursor: pointer;
+  margin-left: auto;
 }
 
 header nav .nav-hamburger button {
@@ -66,98 +150,56 @@ header nav .nav-hamburger button {
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+  cursor: pointer;
 }
 
-header nav .nav-hamburger-icon,
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-  box-sizing: border-box;
+header nav .nav-hamburger-icon {
   display: block;
   position: relative;
   width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background: #fff;
 }
 
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   content: '';
+  display: block;
   position: absolute;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
-  border-radius: 2px;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -7px;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 7px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::before,
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 3px;
-  left: 1px;
-  transform: rotate(45deg);
-  transform-origin: 2px 1px;
   width: 24px;
   height: 2px;
   border-radius: 2px;
+  background: #fff;
 }
 
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: unset;
-  bottom: 3px;
-  transform: rotate(-45deg);
+header nav .nav-hamburger-icon::before {
+  top: -7px;
 }
 
-/* brand */
-header .nav-brand {
-  order: 1;
-  flex-shrink: 0;
-  padding: 16px 24px;
+header nav .nav-hamburger-icon::after {
+  top: 7px;
 }
 
-header nav .nav-brand .default-content-wrapper {
-  background-color: #fff;
-  padding: 12px 16px;
-  border-radius: 0 0 4px 4px;
-}
-
-header nav .nav-brand img {
-  width: 56px;
-  height: auto;
-  display: block;
-}
-
-/* sections */
+/* Sections: ALWAYS hidden in the compact bar */
 header nav .nav-sections {
-  order: 4;
-  flex-basis: 100%;
   display: none;
   visibility: hidden;
-}
-
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
-  visibility: visible;
-  padding: 16px 24px;
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background-color: var(--dark-color);
+  padding: 24px;
+  max-height: calc(100dvh - var(--nav-height));
+  overflow-y: auto;
 }
 
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
   font-size: 16px;
+  margin: 0;
 }
 
 header nav .nav-sections ul > li {
@@ -181,74 +223,52 @@ header nav .nav-sections .nav-drop {
   cursor: pointer;
 }
 
-/* tools */
-header nav .nav-tools {
-  order: 2;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  align-items: center;
-  padding: 0 24px;
+/* Menu open state: controlled by JS adding a class or aria attribute.
+   The standard header.js toggles aria-expanded on the nav element.
+   On desktop: resting = "true", opened = "false" (inverted!)
+   On mobile: resting = "false", opened = "true"
+   We handle BOTH cases by showing sections when the hamburger is clicked. */
+
+/* Mobile open: aria-expanded="true" means menu is open */
+@media (width < 900px) {
+  header nav[aria-expanded='true'] .nav-sections {
+    display: block;
+    visibility: visible;
+  }
+
+  header nav[aria-expanded='true'] .nav-hamburger-icon {
+    background: transparent;
+  }
+
+  header nav[aria-expanded='true'] .nav-hamburger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  header nav[aria-expanded='true'] .nav-hamburger-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
 }
 
-header nav .nav-tools p {
-  margin: 0;
-}
+/* Desktop open: aria-expanded="false" means menu is open (inverted logic) */
+@media (width >= 900px) {
+  header nav[aria-expanded='false'] .nav-sections {
+    display: block;
+    visibility: visible;
+  }
 
-header nav .nav-tools .default-content-wrapper {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
+  header nav[aria-expanded='false'] .nav-hamburger-icon {
+    background: transparent;
+  }
 
-header nav .nav-tools p:first-child a:any-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 32px;
-  border-radius: 2px;
-  font-size: 16px;
-  font-weight: 500;
-  white-space: nowrap;
-  text-decoration: none;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid var(--link-color);
-  transition: background-color 0.2s, border-color 0.2s;
-}
+  header nav[aria-expanded='false'] .nav-hamburger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
 
-header nav .nav-tools p:first-child a:any-link:hover {
-  background-color: var(--link-color);
-}
-
-/* stylelint-disable no-descending-specificity */
-header nav .nav-tools p:last-child a:any-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 32px;
-  border-radius: 2px;
-  font-size: 16px;
-  font-weight: 500;
-  white-space: nowrap;
-  text-decoration: none;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid var(--yellow);
-  transition: background-color 0.2s, border-color 0.2s;
-}
-
-header nav .nav-tools p:last-child a:any-link:hover {
-  background-color: var(--yellow);
-  color: var(--dark-color);
-}
-/* stylelint-enable no-descending-specificity */
-
-header nav .nav-tools .button-container {
-  margin: 0;
-}
-
-header nav .nav-tools .button {
-  all: unset;
+  header nav[aria-expanded='false'] .nav-hamburger-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
 }
